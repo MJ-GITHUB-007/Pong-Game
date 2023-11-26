@@ -91,6 +91,11 @@ def run_pong():
             right_score = 0
 
             start = True
+        
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run=False
+                break
     
     pygame.quit()
 
