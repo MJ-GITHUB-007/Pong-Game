@@ -36,9 +36,10 @@ def run_pong():
         BALL_RADIUS
     )
 
+    start = True
     while run:
         clock.tick(FPS)
-        
+    
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run=False
@@ -66,6 +67,14 @@ def run_pong():
             win_text = "Right Player Won!!"
         
         draw_board(WIN, [left_paddle, right_paddle], ball, (left_score, right_score))
+
+        if start:
+            text = FONT.render(f"Starting Pong...", 1, WHITE)
+            WIN.blit(text, (WIDTH//2 - text.get_width()//2, HEIGHT//2 - text.get_height()//2))
+            
+            pygame.display.update()
+            pygame.time.delay(5000)
+            start = False
         
         if won:
             text = FONT.render(win_text, 1, WHITE)
@@ -80,6 +89,8 @@ def run_pong():
 
             left_score = 0
             right_score = 0
+
+            start = True
     
     pygame.quit()
 

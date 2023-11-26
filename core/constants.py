@@ -12,7 +12,7 @@ PADDLE_HEIGHT = 180
 BALL_RADIUS = 10
 
 FONT = pygame.font.SysFont("comicsans", 50)
-WIN_SCORE = 3
+WIN_SCORE = 1
 
 
 if __name__ == '__main__':
